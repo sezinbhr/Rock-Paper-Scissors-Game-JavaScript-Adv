@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:600,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(
+      circle at 50% 10%,
+      hsl(214, 47%, 23%),
+      hsl(237, 49%, 15%)
+    );
+
+    color: white;
+    font-family: 'Barlow Semi Condensed', sans-serif; /* first circle at is x-axis, the second one is y-axis*/
+
+    min-height: 100vh;
+}
+
+.container {
+    
+    width: 600px;
+    max-width: 100%;
+    margin: 0 auto;
+
+}
+
+header {
+    border: 3px solid hsl(217, 16%, 45%);
+    display: flex; /* put everything in one line */
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 22px;
+    margin: 50px 0;
+    align-items: center;
+}
+
+h1{
+   font-size: 3rem;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   text-transform: uppercase;
+   line-height: 0.8;
+}
+
+h4 {
+    color:hsl(229, 64%, 46%);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.score-container {
+    background-color: #fff;
+    padding: 20px 40px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.score-container p {
+    color: hsl(229, 25%, 31%);
+    margin: 0;
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+main {
+    height: 350px;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    
+}
+
+main::before {
+    background-image: url('./images/bg-triangle.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    height: 70%;
+    width: 70%;
+    z-index: -1;
+    
+}
+
+
+.btn-rules {
+    border:2px solid #fff;
+    border-radius: 10px;
+    background-color: transparent;
+    text-transform: uppercase;
+    color:#fff;
+    font-family: inherit;
+    padding: 10px 25px;
+    font-size: 20px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    letter-spacing: 2px;
+}
+
+.btn-points {
+    border:none;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: inset 0 -5px rgba(0, 0, 0, 0.2);
+    margin: 0 25px;
+    cursor: pointer;
+
+}
+
+.btn-points:focus{
+    outline: none;
+}
+
+.btn-points:active {
+    transform: scale(0.9);
+}
+
+.btn-points .wrapper {
+    height: 120px;
+    width: 120px;
+    background-color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: inset 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn-paper {
+    background: linear-gradient(
+        to bottom, 
+        hsl(230, 89%, 62%), 
+        hsl(230, 89%, 65%)
+    );
+
+}
+
+.btn-scissors {
+    background: linear-gradient(
+        to bottom, 
+        hsl(39, 89%, 49%), 
+        hsl(40, 84%, 53%)
+    );
+
+}
+
+.btn-rock {
+    background: linear-gradient(
+        to bottom, 
+        hsl(349, 71%, 52%), 
+        hsl(349, 70%, 56%)
+    );
+}
+
+.btn {
+    border:2px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+    text-transform: uppercase;
+    color:hsl(229, 25%, 31%);
+    font-family: inherit;
+    padding: 10px 25px;
+    font-size: 20px;
+    letter-spacing: 2px;
+
+}
+
+.selection {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.selection .btn-points {
+    margin:45px;
+    transform: scale(1.4);
+}
+
+.upper-text {
+   font-size: 3rem;
+   margin: 0 0 20px;
+   text-transform: uppercase;
+   line-height: 0.8;
+}
+
+.rules-model {
+    background-color: #f0f0f0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index:100;
+}
+
+.rules-model button {
+    background-color: transparent;
+    margin-top:100px;
+    border: none;
+    transform: scale(1.5);
+    cursor:pointer;
+}
+
+@media(max-width:900px) {
+    .selection .btn-points {
+        margin:45px 20px;
+        transform: scale(1);
+    }
+    
+    .down {
+        order:1;
+    }
+
+    .selection {
+        width: 500px;
+    }
+}
+
+
